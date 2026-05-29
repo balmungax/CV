@@ -4,263 +4,235 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Felipe Pulido — Educator CV</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --ink: #1a1814; --ink-mid: #4a4640; --ink-light: #8a8680;
-    --paper: #faf8f4; --paper-warm: #f3f0e8; --paper-mid: #e8e4d8;
-    --accent: #7a6248; --accent-light: #c4a882; --accent-pale: #f0e8da;
-    --teal: #2d6b5e; --teal-light: #e4f0ed;
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --sans: 'DM Sans', system-ui, sans-serif;
+    --ink: #1c1a17;
+    --ink-mid: #3e3b36;
+    --ink-light: #7a7570;
+    --paper: #faf8f4;
+    --paper-warm: #f2efe7;
+    --paper-mid: #e4e0d5;
+    --accent: #6b5240;
+    --accent-light: #b89475;
+    --accent-pale: #ede5d8;
+    --teal: #2b5f53;
+    --teal-light: #dff0eb;
+    --serif-display: 'EB Garamond', Georgia, serif;
+    --serif-body: 'Libre Baskerville', Georgia, serif;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: var(--sans); background: var(--paper); color: var(--ink); min-height: 100vh; font-size: 15px; line-height: 1.6; }
-
-  .cv-wrapper { max-width: 980px; margin: 0 auto; padding: 0 24px 80px; }
+  body {
+    font-family: var(--serif-body);
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .cv-wrapper { max-width: 960px; margin: 0 auto; padding: 0 32px 80px; }
 
   /* ── HERO ── */
   .hero {
-    padding: 56px 0 48px;
+    padding: 56px 0 44px;
     border-bottom: 1px solid var(--paper-mid);
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 136px 1fr auto;
     gap: 36px;
     align-items: start;
   }
 
   /* PHOTO */
-  .photo-slot {
-    width: 130px; height: 160px;
+  .photo-frame {
+    width: 136px; height: 170px;
     border: 1px solid var(--paper-mid);
+    overflow: hidden; flex-shrink: 0;
     background: var(--paper-warm);
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    flex-shrink: 0;
-    transition: border-color 0.2s;
-  }
-  .photo-slot:hover { border-color: var(--accent-light); }
-  .photo-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .photo-placeholder {
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    height: 100%; gap: 10px;
-    color: var(--ink-light);
-  }
-  .photo-placeholder svg { width: 36px; height: 36px; opacity: 0.45; }
-  .photo-placeholder span { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; line-height: 1.4; padding: 0 8px; }
-  .photo-overlay {
-    position: absolute; inset: 0;
-    background: rgba(26,24,20,0.45);
     display: flex; align-items: center; justify-content: center;
-    opacity: 0; transition: opacity 0.2s;
-    color: #fff; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
   }
-  .photo-slot:hover .photo-overlay { opacity: 1; }
-  #photo-input { display: none; }
+  .photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .photo-placeholder {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 10px; color: var(--ink-light); height: 100%;
+  }
+  .photo-placeholder svg { width: 32px; height: 32px; opacity: 0.35; }
+  .photo-placeholder span { font-family: var(--serif-body); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; padding: 0 10px; }
 
-  .hero-text { padding-top: 4px; }
-  .hero-name { font-family: var(--serif); font-size: 68px; font-weight: 300; line-height: 1; letter-spacing: -1px; color: var(--ink); }
+  /* NAME BLOCK */
+  .hero-text { padding-top: 2px; }
+  .hero-name {
+    font-family: var(--serif-display);
+    font-size: 64px; font-weight: 400;
+    line-height: 1; letter-spacing: 0.5px;
+    color: var(--ink);
+  }
   .hero-name em { font-style: italic; color: var(--accent); }
-  .hero-title { font-family: var(--serif); font-size: 19px; font-weight: 400; font-style: italic; color: var(--accent-light); margin-top: 10px; }
-  .hero-tagline { margin-top: 18px; font-size: 13.5px; line-height: 1.75; color: var(--ink-mid); max-width: 520px; font-weight: 300; }
+  .hero-rule { width: 48px; height: 1px; background: var(--accent-light); margin: 14px 0; }
+  .hero-title {
+    font-family: var(--serif-display);
+    font-size: 17px; font-weight: 400; font-style: italic;
+    color: var(--ink-mid); letter-spacing: 0.2px;
+    margin-bottom: 16px;
+  }
+  .hero-tagline {
+    font-size: 13px; line-height: 1.8;
+    color: var(--ink-mid); max-width: 500px;
+    font-family: var(--serif-body); font-weight: 400;
+  }
 
-  .hero-contact { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; padding-top: 6px; }
-  .contact-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; }
+  /* CONTACT */
+  .hero-contact { display: flex; flex-direction: column; gap: 9px; align-items: flex-end; padding-top: 6px; }
+  .contact-item {
+    display: flex; align-items: center; gap: 9px;
+    font-family: var(--serif-body); font-size: 12.5px;
+    color: var(--ink-mid); text-decoration: none;
+    transition: color 0.2s;
+  }
   .contact-item:hover { color: var(--accent); }
-  .contact-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent-light); flex-shrink: 0; }
+  .contact-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent-light); flex-shrink: 0; }
 
   /* ── NAV ── */
-  .nav-strip { position: sticky; top: 0; z-index: 100; background: var(--paper); border-bottom: 1px solid var(--paper-mid); padding: 12px 0; display: flex; gap: 0; overflow-x: auto; }
-  .nav-btn { font-family: var(--sans); font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-light); background: none; border: none; padding: 6px 18px 6px 0; cursor: pointer; white-space: nowrap; transition: color 0.2s; position: relative; }
-  .nav-btn::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.25s ease; }
+  .nav-strip {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--paper); border-bottom: 1px solid var(--paper-mid);
+    padding: 11px 0; display: flex; gap: 0; overflow-x: auto;
+  }
+  .nav-btn {
+    font-family: var(--serif-body); font-size: 11px; font-weight: 400;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-light); background: none; border: none;
+    padding: 5px 20px 5px 0; cursor: pointer; white-space: nowrap;
+    transition: color 0.2s; position: relative;
+  }
+  .nav-btn::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.25s ease; }
   .nav-btn:hover { color: var(--ink); }
   .nav-btn.active { color: var(--accent); }
-  .nav-btn.active::after { width: calc(100% - 18px); }
+  .nav-btn.active::after { width: calc(100% - 20px); }
 
-  /* ── SECTIONS ── */
-  .section { padding: 56px 0 0; }
-  .section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 36px; }
-  .section-title { font-family: var(--serif); font-size: 34px; font-weight: 300; font-style: italic; color: var(--ink); }
+  /* ── SECTION ── */
+  .section { padding: 52px 0 0; }
+  .section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 32px; }
+  .section-title { font-family: var(--serif-display); font-size: 28px; font-weight: 400; font-style: italic; color: var(--ink); white-space: nowrap; }
   .section-line { flex: 1; height: 1px; background: var(--paper-mid); }
 
   /* ── TIMELINE ── */
-  .timeline { display: flex; flex-direction: column; gap: 0; }
-  .timeline-item { display: grid; grid-template-columns: 160px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--paper-warm); }
+  .timeline { display: flex; flex-direction: column; }
+  .timeline-item { display: grid; grid-template-columns: 152px 1fr; gap: 28px; padding: 26px 0; border-bottom: 1px solid var(--paper-warm); }
   .timeline-item:last-child { border-bottom: none; }
-  .timeline-item:hover .t-org { color: var(--accent); }
-  .t-date { font-size: 12px; font-weight: 300; color: var(--ink-light); letter-spacing: 0.04em; padding-top: 3px; line-height: 1.5; }
-  .t-current { display: inline-block; margin-top: 6px; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); background: var(--teal-light); padding: 2px 8px; border-radius: 20px; font-weight: 500; }
-  .t-role { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--ink); line-height: 1.3; margin-bottom: 4px; }
-  .t-org { font-size: 13px; font-weight: 500; color: var(--accent-light); letter-spacing: 0.03em; margin-bottom: 12px; transition: color 0.2s; }
-  .t-desc { font-size: 13.5px; line-height: 1.75; color: var(--ink-mid); font-weight: 300; }
+  .t-date { font-family: var(--serif-body); font-size: 11.5px; font-weight: 400; color: var(--ink-light); letter-spacing: 0.02em; padding-top: 2px; line-height: 1.6; }
+  .t-current { display: inline-block; margin-top: 7px; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); background: var(--teal-light); padding: 2px 8px; border-radius: 2px; font-weight: 700; font-family: var(--serif-body); }
+  .t-role { font-family: var(--serif-display); font-size: 19px; font-weight: 500; color: var(--ink); line-height: 1.3; margin-bottom: 3px; }
+  .t-org { font-family: var(--serif-body); font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 0.04em; margin-bottom: 11px; text-decoration: none; transition: color 0.2s; display: inline-block; }
+  .t-org:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+  .t-desc { font-family: var(--serif-body); font-size: 13px; line-height: 1.8; color: var(--ink-mid); }
 
   /* ── EDUCATION ── */
   .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-  .edu-card { background: var(--paper-warm); padding: 28px 24px; transition: background 0.2s; position: relative; overflow: hidden; }
-  .edu-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent-light); opacity: 0; transition: opacity 0.2s; }
+  .edu-card { background: var(--paper-warm); padding: 26px 24px; position: relative; overflow: hidden; transition: background 0.2s; }
+  .edu-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--accent-light); opacity: 0; transition: opacity 0.2s; }
   .edu-card:hover { background: var(--accent-pale); }
   .edu-card:hover::before { opacity: 1; }
-  .edu-year { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 10px; }
-  .edu-degree { font-family: var(--serif); font-size: 17px; font-weight: 400; color: var(--ink); line-height: 1.4; margin-bottom: 8px; }
-  .edu-institution { font-size: 13px; color: var(--ink-mid); font-weight: 300; }
-  .edu-badge { display: inline-block; margin-top: 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-pale); border: 1px solid var(--accent-light); padding: 2px 8px; border-radius: 20px; }
+  .edu-year { font-family: var(--serif-body); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 9px; font-weight: 700; }
+  .edu-degree { font-family: var(--serif-display); font-size: 16.5px; font-weight: 500; color: var(--ink); line-height: 1.45; margin-bottom: 7px; }
+  .edu-institution { font-family: var(--serif-body); font-size: 12px; color: var(--ink-mid); font-weight: 400; }
+  .edu-badge { display: inline-block; margin-top: 10px; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.09em; font-weight: 700; color: var(--accent); background: var(--accent-pale); border: 1px solid var(--accent-light); padding: 2px 8px; border-radius: 2px; font-family: var(--serif-body); }
 
   /* ── LANGUAGES ── */
   .lang-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
-  .lang-card { background: var(--paper-warm); padding: 24px 20px; text-align: center; transition: background 0.25s, transform 0.2s; }
-  .lang-card:hover { background: var(--accent-pale); transform: translateY(-2px); }
-  .lang-name { font-family: var(--serif); font-size: 22px; font-weight: 400; font-style: italic; color: var(--ink); margin-bottom: 6px; }
-  .lang-level { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-light); font-weight: 400; margin-bottom: 14px; }
-  .lang-bar-bg { height: 2px; background: var(--paper-mid); border-radius: 2px; overflow: hidden; }
-  .lang-bar-fill { height: 100%; background: var(--accent); border-radius: 2px; transform-origin: left; transform: scaleX(0); transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+  .lang-card { background: var(--paper-warm); padding: 22px 18px; text-align: center; transition: background 0.2s; }
+  .lang-card:hover { background: var(--accent-pale); }
+  .lang-name { font-family: var(--serif-display); font-size: 21px; font-weight: 400; font-style: italic; color: var(--ink); margin-bottom: 5px; }
+  .lang-level { font-family: var(--serif-body); font-size: 10px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-light); font-weight: 700; margin-bottom: 13px; }
+  .lang-bar-bg { height: 1px; background: var(--paper-mid); overflow: hidden; }
+  .lang-bar-fill { height: 100%; background: var(--accent); transform-origin: left; transform: scaleX(0); transition: transform 0.9s cubic-bezier(0.22,1,0.36,1); }
   .lang-bar-fill.animate { transform: scaleX(1); }
 
-  /* ── COVER LETTER ── */
-  .cover-toggle { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; background: var(--paper-warm); cursor: pointer; border: none; width: 100%; text-align: left; transition: background 0.2s; font-family: var(--sans); }
+  /* ── COVER LETTER — read-only, unfoldable only ── */
+  .cover-toggle {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 22px; background: var(--paper-warm);
+    cursor: pointer; border: none; width: 100%; text-align: left;
+    transition: background 0.2s; font-family: var(--serif-body);
+    border-left: 2px solid var(--accent-light);
+  }
   .cover-toggle:hover { background: var(--accent-pale); }
-  .cover-toggle-label { font-family: var(--serif); font-size: 18px; font-weight: 400; font-style: italic; color: var(--ink); }
-  .cover-toggle-icon { font-size: 20px; color: var(--accent-light); transition: transform 0.3s ease; line-height: 1; }
-  .cover-toggle.open .cover-toggle-icon { transform: rotate(45deg); }
-  .cover-body { display: none; padding: 36px 40px; background: var(--paper-warm); border-top: 1px solid var(--paper-mid); }
+  .cover-toggle-label { font-family: var(--serif-display); font-size: 17px; font-weight: 400; font-style: italic; color: var(--ink); }
+  .cover-chevron { font-size: 14px; color: var(--accent-light); transition: transform 0.3s ease; }
+  .cover-toggle.open .cover-chevron { transform: rotate(180deg); }
+  .cover-body { display: none; padding: 36px 40px 36px 24px; background: var(--paper-warm); border-left: 2px solid var(--accent-light); border-top: 1px solid var(--paper-mid); }
   .cover-body.open { display: block; }
-  .cover-editor { width: 100%; min-height: 280px; background: none; border: none; font-family: var(--serif); font-size: 17px; font-weight: 300; line-height: 1.9; color: var(--ink-mid); resize: none; outline: none; padding: 0; }
-  .cover-edit-bar { display: flex; justify-content: flex-end; padding: 12px 0 0; border-top: 1px solid var(--paper-mid); margin-top: 20px; gap: 10px; }
-  .btn-edit { font-size: 12px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; padding: 7px 16px; border: 1px solid var(--paper-mid); background: none; color: var(--ink-mid); cursor: pointer; transition: background 0.2s, border-color 0.2s; font-family: var(--sans); }
-  .btn-edit:hover { background: var(--paper-mid); border-color: var(--accent-light); }
-  .btn-primary { border-color: var(--accent-light); background: var(--accent-pale); color: var(--accent); }
-  .btn-primary:hover { background: var(--accent-light); color: var(--paper); }
+  .cover-text {
+    font-family: var(--serif-body); font-size: 14px; font-weight: 400;
+    line-height: 1.95; color: var(--ink-mid);
+    max-width: 600px; white-space: pre-line;
+    user-select: text;
+  }
 
   /* ── RECOMMENDATION LETTERS ── */
+  .rec-note { font-family: var(--serif-body); font-size: 12px; color: var(--ink-light); margin-bottom: 20px; font-style: italic; }
   .rec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-
   .rec-slot {
-    display: flex; flex-direction: column;
-    background: var(--paper-warm);
-    border: 1px solid var(--paper-mid);
-    overflow: hidden;
-    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    position: relative;
+    background: var(--paper-warm); border: 1px solid var(--paper-mid);
+    overflow: hidden; transition: border-color 0.2s, transform 0.2s;
+    cursor: pointer; display: flex; flex-direction: column;
   }
-
-  .rec-slot.has-image { cursor: pointer; }
-  .rec-slot.has-image:hover { border-color: var(--accent-light); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(122,98,72,0.12); }
-
-  .rec-thumb-area {
-    aspect-ratio: 0.707;
-    background: var(--paper-mid);
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden; position: relative;
-  }
-
+  .rec-slot:hover { border-color: var(--accent-light); transform: translateY(-3px); }
+  .rec-thumb-area { aspect-ratio: 0.707; overflow: hidden; position: relative; background: var(--paper-mid); }
   .rec-thumb-area img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
-
-  .rec-empty-placeholder {
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 10px; height: 100%; width: 100%;
-    color: var(--ink-light); cursor: pointer;
-    padding: 16px; text-align: center;
-  }
-  .rec-empty-placeholder svg { width: 28px; height: 28px; opacity: 0.4; }
-  .rec-empty-placeholder span { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.5; }
-
-  .rec-zoom-hint {
-    position: absolute; inset: 0;
-    background: rgba(26,24,20,0.42);
+  .rec-zoom-overlay {
+    position: absolute; inset: 0; background: rgba(28,26,23,0.38);
     display: flex; align-items: center; justify-content: center;
-    opacity: 0; transition: opacity 0.25s;
-    color: #fff; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-    gap: 6px;
+    opacity: 0; transition: opacity 0.22s;
+    color: #fff; font-family: var(--serif-body); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
   }
-  .rec-slot.has-image:hover .rec-zoom-hint { opacity: 1; }
-
-  .rec-info {
-    padding: 12px 14px 14px;
-    border-top: 1px solid var(--paper-mid);
-    display: flex; flex-direction: column; gap: 4px;
-  }
-
-  .rec-label {
-    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--ink-light);
-  }
-
-  .rec-name-input {
-    font-family: var(--serif);
-    font-size: 15px; font-weight: 400;
-    color: var(--ink-mid);
-    background: none; border: none; outline: none;
-    width: 100%; padding: 0;
-    cursor: text;
-  }
-  .rec-name-input::placeholder { color: var(--ink-light); font-style: italic; }
-
-  .rec-upload-btn {
-    margin-top: 8px;
-    font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--accent); background: var(--accent-pale);
-    border: 1px solid var(--accent-light);
-    padding: 5px 10px; cursor: pointer; font-family: var(--sans);
-    transition: background 0.2s;
-    align-self: flex-start;
-  }
-  .rec-upload-btn:hover { background: var(--accent-light); color: var(--paper); }
-  .rec-slot.has-image .rec-upload-btn { display: none; }
-
-  .rec-remove-btn {
-    position: absolute; top: 6px; right: 6px;
-    width: 22px; height: 22px; border-radius: 50%;
-    background: rgba(26,24,20,0.55); border: none; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    color: #fff; font-size: 11px; opacity: 0; transition: opacity 0.2s;
-  }
-  .rec-slot.has-image:hover .rec-remove-btn { opacity: 1; }
+  .rec-slot:hover .rec-zoom-overlay { opacity: 1; }
+  .rec-info { padding: 12px 13px 14px; border-top: 1px solid var(--paper-mid); }
+  .rec-num { font-family: var(--serif-body); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); font-weight: 700; margin-bottom: 3px; }
+  .rec-from { font-family: var(--serif-display); font-size: 14px; font-weight: 400; font-style: italic; color: var(--ink-mid); line-height: 1.4; }
 
   /* ── LIGHTBOX ── */
-  .lightbox { position: fixed; inset: 0; background: rgba(26,24,20,0.92); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  .lightbox { position: fixed; inset: 0; background: rgba(28,26,23,0.93); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.28s; }
   .lightbox.open { opacity: 1; pointer-events: all; }
-  .lightbox-inner { position: relative; max-width: 88vw; max-height: 92vh; }
-  .lightbox-inner img { max-width: 88vw; max-height: 92vh; object-fit: contain; display: block; }
-  .lightbox-caption { position: absolute; bottom: -32px; left: 0; right: 0; text-align: center; font-family: var(--serif); font-size: 14px; font-style: italic; color: rgba(255,255,255,0.6); }
-  .lightbox-close { position: absolute; top: -40px; right: 0; background: none; border: none; color: rgba(255,255,255,0.65); font-size: 22px; cursor: pointer; transition: color 0.2s; padding: 4px; }
+  .lightbox-inner { position: relative; }
+  .lightbox-inner img { max-width: 86vw; max-height: 90vh; object-fit: contain; display: block; }
+  .lightbox-caption { position: absolute; bottom: -30px; left: 0; right: 0; text-align: center; font-family: var(--serif-display); font-size: 14px; font-style: italic; color: rgba(255,255,255,0.55); }
+  .lightbox-close { position: absolute; top: -38px; right: 0; background: none; border: none; color: rgba(255,255,255,0.6); font-size: 20px; cursor: pointer; padding: 4px 8px; transition: color 0.2s; font-family: var(--serif-body); }
   .lightbox-close:hover { color: #fff; }
-  .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; color: rgba(255,255,255,0.55); font-size: 28px; cursor: pointer; padding: 8px; transition: color 0.2s; }
+  .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; color: rgba(255,255,255,0.5); font-size: 32px; cursor: pointer; padding: 8px 12px; transition: color 0.2s; line-height: 1; }
   .lightbox-nav:hover { color: #fff; }
-  .lightbox-prev { left: -52px; }
-  .lightbox-next { right: -52px; }
+  .lightbox-prev { left: -56px; }
+  .lightbox-next { right: -56px; }
 
   /* ── PRINT ── */
-  .print-btn { position: fixed; bottom: 32px; right: 32px; background: var(--ink); color: var(--paper); border: none; padding: 12px 22px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; display: flex; align-items: center; gap: 8px; z-index: 50; }
+  .print-btn { position: fixed; bottom: 28px; right: 28px; background: var(--ink); color: var(--paper); border: none; padding: 11px 20px; font-family: var(--serif-body); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; z-index: 50; }
   .print-btn:hover { background: var(--accent); transform: translateY(-1px); }
 
   /* ── FOOTER ── */
-  .cv-footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--paper-mid); display: flex; justify-content: space-between; align-items: center; }
-  .footer-name { font-family: var(--serif); font-size: 14px; font-style: italic; color: var(--ink-light); }
-  .footer-date { font-size: 12px; color: var(--ink-light); letter-spacing: 0.04em; }
+  .cv-footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--paper-mid); display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: var(--serif-display); font-size: 13px; font-style: italic; color: var(--ink-light); }
+  .footer-date { font-family: var(--serif-body); font-size: 11px; color: var(--ink-light); letter-spacing: 0.05em; }
 
-  /* ── ANIMATIONS ── */
-  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  /* ── FADE IN ── */
+  .fade-in { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 760px) {
+  @media (max-width: 720px) {
     .hero { grid-template-columns: 1fr; }
-    .hero-name { font-size: 48px; }
+    .hero-name { font-size: 46px; }
     .hero-contact { align-items: flex-start; }
-    .edu-grid, .lang-grid { grid-template-columns: 1fr 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .lang-grid { grid-template-columns: 1fr 1fr; }
     .rec-grid { grid-template-columns: 1fr 1fr; }
-    .timeline-item { grid-template-columns: 1fr; gap: 6px; }
-    .photo-slot { width: 100px; height: 124px; }
+    .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+    .photo-frame { width: 100px; height: 126px; }
   }
-
   @media print {
-    .nav-strip, .print-btn, .rec-upload-btn, .rec-remove-btn, .cover-edit-bar { display: none !important; }
+    .nav-strip, .print-btn { display: none !important; }
     .cover-body { display: block !important; }
-    .section { padding-top: 32px; }
-    .hero { padding-top: 20px; }
+    .section { padding-top: 28px; }
+    .hero { padding-top: 16px; }
   }
 </style>
 </head>
@@ -271,23 +243,22 @@
   <!-- HERO -->
   <header class="hero fade-in">
 
-    <!-- PHOTO SLOT -->
-    <div class="photo-slot" id="photo-slot" onclick="document.getElementById('photo-input').click()" title="Click to upload your photo">
-      <div class="photo-placeholder" id="photo-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+    <!-- PHOTO -->
+    <div class="photo-frame">
+      <div class="photo-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <circle cx="12" cy="8" r="4.5"/><path d="M3 21c0-4.5 4-8 9-8s9 3.5 9 8"/>
         </svg>
-        <span>Add<br>Photo</span>
+        <span>Photo</span>
       </div>
-      <div class="photo-overlay">Change photo</div>
     </div>
-    <input type="file" id="photo-input" accept="image/*">
 
     <!-- NAME + BIO -->
     <div class="hero-text">
-      <h1 class="hero-name">Felipe<br><em>Pulido</em></h1>
-      <p class="hero-title">International Educator</p>
-      <p class="hero-tagline">International educator with experience teaching young learners in multilingual and international environments. Skilled in differentiated instruction, phonics-based literacy development, and creating engaging learning experiences that support students' academic and social-emotional growth.</p>
+      <h1 class="hero-name">Felipe <em>Pulido</em></h1>
+      <div class="hero-rule"></div>
+      <p class="hero-title">Primary Teacher</p>
+      <p class="hero-tagline">International educator with experience teaching young learners in multilingual and international environments. Skilled in <strong>differentiated instruction</strong>, <strong>phonics-based literacy development</strong>, and creating engaging learning experiences that support students' academic and social-emotional growth. Recognised for building positive and supportive relationships with students as an essential part of the learning process.</p>
     </div>
 
     <!-- CONTACT -->
@@ -318,8 +289,8 @@
         <div class="t-date">Aug 2025 – Present<br><span class="t-current">Current</span></div>
         <div>
           <div class="t-role">Homeroom Teacher — 2nd Grade</div>
-          <div class="t-org">High Tech Academy · Almaty</div>
-          <div class="t-desc">Delivering differentiated instruction in English, Science, and Maths using Mystery Science and Illustrative Mathematics as core instructional resources. Leading two interdisciplinary Project-Based Learning (PBL) projects per year to strengthen students' critical-thinking, collaboration, inquiry, and problem-solving skills.</div>
+          <a class="t-org" href="https://en.hta.kz/hta_team/#!/tab/355428231-4" target="_blank">High Tech Academy · Almaty</a>
+          <div class="t-desc">Delivering <strong>differentiated instruction</strong> in English, Science, and Maths using <strong>Mystery Science</strong> and <strong>Illustrative Mathematics</strong> as core instructional resources. In alignment with the school's <strong>Project-Based Learning (PBL)</strong> approach, leading two interdisciplinary projects during the academic year to strengthen students' critical-thinking, collaboration, inquiry, and problem-solving skills.</div>
         </div>
       </div>
 
@@ -327,8 +298,8 @@
         <div class="t-date">Aug 2021 – Jul 2025</div>
         <div>
           <div class="t-role">Kindergarten English Teacher</div>
-          <div class="t-org">Tamos Education · Almaty</div>
-          <div class="t-desc">Delivered phonics-based early literacy instruction to young Russian-speaking learners while preparing curriculum-aligned lessons and developing original teaching materials to support English fluency.</div>
+          <a class="t-org" href="https://www.tamos-education.kz/ru/tamosiki/predshkola.html" target="_blank">Tamos Education · Almaty</a>
+          <div class="t-desc">Delivered <strong>phonics-based early literacy instruction</strong> to young Russian-speaking learners while preparing curriculum-aligned lessons and developing original teaching materials to support English fluency.</div>
         </div>
       </div>
 
@@ -336,8 +307,8 @@
         <div class="t-date">Jun–Aug 2015<br>Apr–Aug 2016<br>Jun–Aug 2017<br>Jun–Aug 2021</div>
         <div>
           <div class="t-role">Kindergarten English Teacher</div>
-          <div class="t-org">Oxford Academy · Almaty</div>
-          <div class="t-desc">Delivered phonics instruction to children aged 5–7 while fostering strong communication with parents to support student development. Enhanced language acquisition through songs, riddles, and nursery rhymes.</div>
+          <a class="t-org" href="https://oxfordacademy.kz/" target="_blank">Oxford Academy · Almaty</a>
+          <div class="t-desc">Delivered <strong>phonics instruction</strong> to children aged 5–7 while fostering strong communication with parents to support student development. Enhanced language acquisition through songs, riddles, and nursery rhymes.</div>
         </div>
       </div>
 
@@ -345,8 +316,8 @@
         <div class="t-date">May 2015 – Present<br><span class="t-current">Current</span></div>
         <div>
           <div class="t-role">Spanish Teacher</div>
-          <div class="t-org">Foundation for Cultural Development · Almaty</div>
-          <div class="t-desc">Conducting Spanish classes for learners of different ages, adapting lessons to diverse proficiency levels and individual learning goals. Volunteered during summer camps supporting children from disadvantaged backgrounds through educational and recreational activities.</div>
+          <div class="t-org" style="cursor:default;">Foundation for Cultural Development · Almaty</div>
+          <div class="t-desc">Conducting Spanish classes for learners of different ages, adapting lessons to <strong>diverse proficiency levels</strong> and individual learning goals. Volunteered during summer camps supporting children from disadvantaged backgrounds through educational and recreational activities.</div>
         </div>
       </div>
 
@@ -364,12 +335,12 @@
       </div>
       <div class="edu-card fade-in">
         <div class="edu-year">2020</div>
-        <div class="edu-degree">Bachelor's Degree in Social Sciences <em style="font-family:var(--serif);font-style:italic;font-weight:300;">(Journalism)</em></div>
+        <div class="edu-degree">Bachelor's Degree in Social Sciences <em style="font-weight:400;font-style:italic;">(Journalism)</em></div>
         <div class="edu-institution">al-Farabi Kazakh National University</div>
       </div>
       <div class="edu-card fade-in">
         <div class="edu-year">2025</div>
-        <div class="edu-degree">Post Graduate Diploma in Education and Teaching (PGET)</div>
+        <div class="edu-degree">Post Graduate Diploma in Education and Teaching <em style="font-weight:400;font-style:italic;">(PGET)</em></div>
         <div class="edu-institution">Asian College of Teachers</div>
       </div>
       <div class="edu-card fade-in">
@@ -392,15 +363,15 @@
     </div>
   </section>
 
-  <!-- COVER LETTER -->
+  <!-- COVER LETTER — read-only, unfold only -->
   <section class="section fade-in" id="cover">
     <div class="section-header"><h2 class="section-title">Cover Letter</h2><div class="section-line"></div></div>
     <button class="cover-toggle" id="cover-toggle" onclick="toggleCover()">
-      <span class="cover-toggle-label">View / Edit Cover Letter</span>
-      <span class="cover-toggle-icon">+</span>
+      <span class="cover-toggle-label">Read Cover Letter</span>
+      <span class="cover-chevron">&#9660;</span>
     </button>
     <div class="cover-body" id="cover-body">
-      <textarea class="cover-editor" id="cover-editor" readonly>Dear Hiring Committee,
+      <div class="cover-text">Dear Hiring Committee,
 
 I am writing to express my interest in the teaching position at your institution. With over a decade of experience educating young learners in multilingual and international environments in Almaty, Kazakhstan, I bring a deep commitment to differentiated instruction, phonics-based literacy, and holistic child development.
 
@@ -411,89 +382,61 @@ I am currently completing a Master's degree in Bilingual Education and CLIL, whi
 Thank you sincerely for your consideration.
 
 Warm regards,
-Felipe Pulido</textarea>
-      <div class="cover-edit-bar">
-        <button class="btn-edit" onclick="toggleEditMode()">Edit</button>
-        <button class="btn-edit btn-primary" onclick="saveCoverLetter()">Save</button>
-      </div>
+Felipe Pulido</div>
     </div>
   </section>
 
-  <!-- RECOMMENDATION LETTERS -->
+  <!-- RECOMMENDATION LETTERS — static, src-linked -->
   <section class="section fade-in" id="documents">
     <div class="section-header"><h2 class="section-title">Recommendation Letters</h2><div class="section-line"></div></div>
-    <div class="rec-grid" id="rec-grid">
+    <p class="rec-note">Click any letter to view full size.</p>
+    <div class="rec-grid">
 
-      <div class="rec-slot fade-in" id="rec-0">
-        <div class="rec-thumb-area" id="rec-thumb-0">
-          <div class="rec-empty-placeholder" onclick="triggerRecUpload(0)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="12" x2="12" y2="18"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-            <span>Upload letter</span>
-          </div>
-          <div class="rec-zoom-hint">&#x2315; View full size</div>
-          <button class="rec-remove-btn" onclick="removeRec(event,0)">✕</button>
+      <div class="rec-slot fade-in" onclick="openLightbox(0)">
+        <div class="rec-thumb-area">
+          <img src="recommendation_1.png" alt="Recommendation letter 1">
+          <div class="rec-zoom-overlay">View</div>
         </div>
         <div class="rec-info">
-          <div class="rec-label">Recommendation 1</div>
-          <input class="rec-name-input" type="text" placeholder="From: Name, Institution" id="rec-name-0">
-          <button class="rec-upload-btn" onclick="triggerRecUpload(0)">+ Upload PNG</button>
+          <div class="rec-num">Letter I</div>
+          <div class="rec-from">High Tech Academy</div>
         </div>
       </div>
 
-      <div class="rec-slot fade-in" id="rec-1">
-        <div class="rec-thumb-area" id="rec-thumb-1">
-          <div class="rec-empty-placeholder" onclick="triggerRecUpload(1)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="12" x2="12" y2="18"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-            <span>Upload letter</span>
-          </div>
-          <div class="rec-zoom-hint">&#x2315; View full size</div>
-          <button class="rec-remove-btn" onclick="removeRec(event,1)">✕</button>
+      <div class="rec-slot fade-in" onclick="openLightbox(1)">
+        <div class="rec-thumb-area">
+          <img src="recommendation_2.png" alt="Recommendation letter 2">
+          <div class="rec-zoom-overlay">View</div>
         </div>
         <div class="rec-info">
-          <div class="rec-label">Recommendation 2</div>
-          <input class="rec-name-input" type="text" placeholder="From: Name, Institution" id="rec-name-1">
-          <button class="rec-upload-btn" onclick="triggerRecUpload(1)">+ Upload PNG</button>
+          <div class="rec-num">Letter II</div>
+          <div class="rec-from">Tamos Education</div>
         </div>
       </div>
 
-      <div class="rec-slot fade-in" id="rec-2">
-        <div class="rec-thumb-area" id="rec-thumb-2">
-          <div class="rec-empty-placeholder" onclick="triggerRecUpload(2)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="12" x2="12" y2="18"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-            <span>Upload letter</span>
-          </div>
-          <div class="rec-zoom-hint">&#x2315; View full size</div>
-          <button class="rec-remove-btn" onclick="removeRec(event,2)">✕</button>
+      <div class="rec-slot fade-in" onclick="openLightbox(2)">
+        <div class="rec-thumb-area">
+          <img src="recommendation_3.png" alt="Recommendation letter 3">
+          <div class="rec-zoom-overlay">View</div>
         </div>
         <div class="rec-info">
-          <div class="rec-label">Recommendation 3</div>
-          <input class="rec-name-input" type="text" placeholder="From: Name, Institution" id="rec-name-2">
-          <button class="rec-upload-btn" onclick="triggerRecUpload(2)">+ Upload PNG</button>
+          <div class="rec-num">Letter III</div>
+          <div class="rec-from">Oxford Academy</div>
         </div>
       </div>
 
-      <div class="rec-slot fade-in" id="rec-3">
-        <div class="rec-thumb-area" id="rec-thumb-3">
-          <div class="rec-empty-placeholder" onclick="triggerRecUpload(3)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="12" x2="12" y2="18"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-            <span>Upload letter</span>
-          </div>
-          <div class="rec-zoom-hint">&#x2315; View full size</div>
-          <button class="rec-remove-btn" onclick="removeRec(event,3)">✕</button>
+      <div class="rec-slot fade-in" onclick="openLightbox(3)">
+        <div class="rec-thumb-area">
+          <img src="recommendation_4.png" alt="Recommendation letter 4">
+          <div class="rec-zoom-overlay">View</div>
         </div>
         <div class="rec-info">
-          <div class="rec-label">Recommendation 4</div>
-          <input class="rec-name-input" type="text" placeholder="From: Name, Institution" id="rec-name-3">
-          <button class="rec-upload-btn" onclick="triggerRecUpload(3)">+ Upload PNG</button>
+          <div class="rec-num">Letter IV</div>
+          <div class="rec-from">Foundation for Cultural Development</div>
         </div>
       </div>
 
     </div>
-    <!-- hidden file inputs, one per slot -->
-    <input type="file" id="rec-input-0" accept="image/png,image/jpeg" style="display:none">
-    <input type="file" id="rec-input-1" accept="image/png,image/jpeg" style="display:none">
-    <input type="file" id="rec-input-2" accept="image/png,image/jpeg" style="display:none">
-    <input type="file" id="rec-input-3" accept="image/png,image/jpeg" style="display:none">
   </section>
 
   <footer class="cv-footer">
@@ -505,7 +448,7 @@ Felipe Pulido</textarea>
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <div class="lightbox-inner">
-    <button class="lightbox-close" onclick="closeLightbox(null,true)">✕</button>
+    <button class="lightbox-close" onclick="closeLightbox(null,true)">&#10005; Close</button>
     <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1,event)">&#8249;</button>
     <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1,event)">&#8250;</button>
     <img id="lightbox-img" src="" alt="Recommendation letter">
@@ -513,7 +456,7 @@ Felipe Pulido</textarea>
   </div>
 </div>
 
-<button class="print-btn" onclick="window.print()">⎙ Print / PDF</button>
+<button class="print-btn" onclick="window.print()">&#9113; Print / PDF</button>
 
 <script>
   document.getElementById('cv-date').textContent = new Date().toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
@@ -521,11 +464,10 @@ Felipe Pulido</textarea>
   // Fade-in + language bars
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        e.target.querySelectorAll('.lang-bar-fill').forEach(b => b.classList.add('animate'));
-        io.unobserve(e.target);
-      }
+      if (!e.isIntersecting) return;
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('.lang-bar-fill').forEach(b => b.classList.add('animate'));
+      io.unobserve(e.target);
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
@@ -539,11 +481,10 @@ Felipe Pulido</textarea>
   const navBtns = document.querySelectorAll('.nav-btn');
   const navObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        navBtns.forEach(b => b.classList.remove('active'));
-        const btn = document.querySelector(`.nav-btn[data-target="${e.target.id}"]`);
-        if (btn) btn.classList.add('active');
-      }
+      if (!e.isIntersecting) return;
+      navBtns.forEach(b => b.classList.remove('active'));
+      const btn = document.querySelector(`.nav-btn[data-target="${e.target.id}"]`);
+      if (btn) btn.classList.add('active');
     });
   }, { rootMargin: '-30% 0px -60% 0px' });
   sections.forEach(s => navObs.observe(s));
@@ -551,95 +492,34 @@ Felipe Pulido</textarea>
     document.getElementById(btn.dataset.target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }));
 
-  // Photo upload
-  document.getElementById('photo-input').addEventListener('change', function() {
-    if (!this.files[0]) return;
-    const reader = new FileReader();
-    reader.onload = ev => {
-      const slot = document.getElementById('photo-slot');
-      slot.querySelector('.photo-placeholder').style.display = 'none';
-      let img = slot.querySelector('img');
-      if (!img) { img = document.createElement('img'); slot.insertBefore(img, slot.querySelector('.photo-overlay')); }
-      img.src = ev.target.result;
-    };
-    reader.readAsDataURL(this.files[0]);
-  });
-
-  // Cover letter
+  // Cover letter — unfold only, no editing
   function toggleCover() {
-    document.getElementById('cover-body').classList.toggle('open');
-    document.getElementById('cover-toggle').classList.toggle('open');
-  }
-  let editMode = false;
-  function toggleEditMode() {
-    const ed = document.getElementById('cover-editor');
-    const btn = document.querySelector('.btn-edit:not(.btn-primary)');
-    editMode = !editMode;
-    ed.readOnly = !editMode;
-    btn.textContent = editMode ? 'Cancel' : 'Edit';
-    ed.style.background = editMode ? 'rgba(244,240,232,0.5)' : 'none';
-    if (editMode) ed.focus();
-  }
-  function saveCoverLetter() {
-    const ed = document.getElementById('cover-editor');
-    ed.readOnly = true; editMode = false;
-    ed.style.background = 'none';
-    document.querySelector('.btn-edit:not(.btn-primary)').textContent = 'Edit';
+    const body = document.getElementById('cover-body');
+    const toggle = document.getElementById('cover-toggle');
+    body.classList.toggle('open');
+    toggle.classList.toggle('open');
   }
 
-  // Recommendation letters
-  const recImages = [null, null, null, null];
+  // Recommendation letter sources — update filenames to match your actual PNGs
+  const recSrcs = [
+    'recommendation_1.png',
+    'recommendation_2.png',
+    'recommendation_3.png',
+    'recommendation_4.png'
+  ];
+  const recLabels = [
+    'Letter I — High Tech Academy',
+    'Letter II — Tamos Education',
+    'Letter III — Oxford Academy',
+    'Letter IV — Foundation for Cultural Development'
+  ];
 
-  function triggerRecUpload(idx) { document.getElementById('rec-input-'+idx).click(); }
-
-  [0,1,2,3].forEach(idx => {
-    document.getElementById('rec-input-'+idx).addEventListener('change', function() {
-      if (!this.files[0]) return;
-      const reader = new FileReader();
-      reader.onload = ev => setRecImage(idx, ev.target.result);
-      reader.readAsDataURL(this.files[0]);
-    });
-  });
-
-  function setRecImage(idx, src) {
-    recImages[idx] = src;
-    const slot = document.getElementById('rec-'+idx);
-    const thumbArea = document.getElementById('rec-thumb-'+idx);
-    thumbArea.querySelector('.rec-empty-placeholder').style.display = 'none';
-    let img = thumbArea.querySelector('img');
-    if (!img) {
-      img = document.createElement('img');
-      img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top;display:block;position:absolute;inset:0;';
-      thumbArea.insertBefore(img, thumbArea.querySelector('.rec-zoom-hint'));
-    }
-    img.src = src;
-    slot.classList.add('has-image');
-    slot.onclick = () => openLightbox(idx);
-  }
-
-  function removeRec(e, idx) {
-    e.stopPropagation();
-    recImages[idx] = null;
-    const slot = document.getElementById('rec-'+idx);
-    const thumbArea = document.getElementById('rec-thumb-'+idx);
-    const img = thumbArea.querySelector('img');
-    if (img) img.remove();
-    thumbArea.querySelector('.rec-empty-placeholder').style.display = '';
-    slot.classList.remove('has-image');
-    slot.onclick = null;
-    document.getElementById('rec-input-'+idx).value = '';
-  }
-
-  // Lightbox
-  let currentLightboxIdx = -1;
+  let currentIdx = 0;
 
   function openLightbox(idx) {
-    currentLightboxIdx = idx;
-    const src = recImages[idx];
-    if (!src) return;
-    document.getElementById('lightbox-img').src = src;
-    const nameVal = document.getElementById('rec-name-'+idx).value;
-    document.getElementById('lightbox-caption').textContent = nameVal || ('Recommendation Letter '+(idx+1));
+    currentIdx = idx;
+    document.getElementById('lightbox-img').src = recSrcs[idx];
+    document.getElementById('lightbox-caption').textContent = recLabels[idx];
     document.getElementById('lightbox').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -653,14 +533,11 @@ Felipe Pulido</textarea>
 
   function lightboxNav(dir, e) {
     e.stopPropagation();
-    let next = currentLightboxIdx;
-    for (let i = 0; i < 4; i++) {
-      next = (next + dir + 4) % 4;
-      if (recImages[next]) { openLightbox(next); return; }
-    }
+    openLightbox((currentIdx + dir + 4) % 4);
   }
 
   document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
     if (e.key === 'Escape') closeLightbox(null, true);
     if (e.key === 'ArrowRight') lightboxNav(1, { stopPropagation: ()=>{} });
     if (e.key === 'ArrowLeft') lightboxNav(-1, { stopPropagation: ()=>{} });
